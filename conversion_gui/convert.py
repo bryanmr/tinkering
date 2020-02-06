@@ -14,11 +14,11 @@ def convert(*args):
     finally:
         entry.focus()
 
-# Create window and inner frame
+# Create window and inner ttk frame
 window = Tk()
 window.title("Feet to meters, and meters to feet...")
 mainframe = ttk.Frame(window, padding="10 10 24 24")
-mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
+mainframe.grid(column=0, row=0)
 
 # Variables
 entered = StringVar()
@@ -31,11 +31,14 @@ entry.grid(column=2, row=1)
 ttk.Button(mainframe, text="Convert", command=convert).grid(column=3, row=1)
 ttk.Label(mainframe, text="Value:").grid(column=1, row=1)
 
+# Separator
+ttk.Separator(mainframe).grid(row=2, sticky="ew", columnspan=4, pady=10)
+
 #Display
-ttk.Label(mainframe, text="Meters to Feet: ").grid(column=1, row=2)
-ttk.Label(mainframe, textvariable=feet).grid(column=2, row=2)
-ttk.Label(mainframe, text="Feet to Meters: ").grid(column=1, row=3)
-ttk.Label(mainframe, textvariable=meters).grid(column=2, row=3)
+ttk.Label(mainframe, text="Meters to Feet: ").grid(column=1, row=3)
+ttk.Label(mainframe, textvariable=feet).grid(column=2, row=3)
+ttk.Label(mainframe, text="Feet to Meters: ").grid(column=1, row=4)
+ttk.Label(mainframe, textvariable=meters).grid(column=2, row=4)
 
 # Focus input and accept return, then make the GUI
 entry.focus()
