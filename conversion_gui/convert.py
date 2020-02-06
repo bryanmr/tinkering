@@ -22,7 +22,7 @@ window.title("Feet to meters, and meters to feet...")
 mainframe = ttk.Frame(window, padding="10 10 24 24")
 mainframe.grid(column=0, row=0, sticky="ewns")
 
-# Make ttk frame resize and add separator
+# Make ttk frame resize with window
 window.columnconfigure(0, weight=1)
 window.rowconfigure(0, weight=1)
 
