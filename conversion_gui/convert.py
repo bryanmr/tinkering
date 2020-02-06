@@ -14,11 +14,17 @@ def convert(*args):
     finally:
         entry.focus()
 
-# Create window and inner ttk frame
+# Create window
 window = Tk()
 window.title("Feet to meters, and meters to feet...")
+
+# Create ttk (better looking) frame
 mainframe = ttk.Frame(window, padding="10 10 24 24")
-mainframe.grid(column=0, row=0)
+mainframe.grid(column=0, row=0, sticky="ewns")
+
+# Make ttk frame resize and add separator
+window.columnconfigure(0, weight=1)
+window.rowconfigure(0, weight=1)
 
 # Variables
 entered = StringVar()
