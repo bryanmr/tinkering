@@ -55,10 +55,18 @@ class converter():
         self.meters = 0.0
 
     def display(self, *event):
-        self.yards_val.set(self.yards)
-        self.meters_val.set(self.meters)
-        self.inches_val.set(self.inches)
-        self.centimeters_val.set(self.centimeters)
+        try:
+            float(self.yards_val.get())
+            float(self.meters_val.get())
+            float(self.inches_val.get())
+            float(self.centimeters_val.get())
+            self.yards_val.set(self.yards)
+            self.meters_val.set(self.meters)
+            self.inches_val.set(self.inches)
+            self.centimeters_val.set(self.centimeters)
+            print("Yards:", self.yards, "-- Meters:", self.meters, "-- Inches:", self.inches, "-- Centimeters:", self.centimeters)
+        except ValueError:
+            print("All fields must contain a number to calculate")
 
     def exit_now(self):
         quit()
