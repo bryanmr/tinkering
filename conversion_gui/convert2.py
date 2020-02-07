@@ -64,7 +64,8 @@ class converter():
             self.meters_val.set(self.meters)
             self.inches_val.set(self.inches)
             self.centimeters_val.set(self.centimeters)
-            print("Yards:", self.yards, "-- Meters:", self.meters, "-- Inches:", self.inches, "-- Centimeters:", self.centimeters)
+            print("Yards:", self.yards, "-- Meters:", self.meters, "-- Inches:",
+                    self.inches, "-- Centimeters:", self.centimeters)
         except ValueError:
             print("All fields must contain a number to calculate")
 
