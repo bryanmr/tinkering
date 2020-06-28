@@ -1,9 +1,15 @@
 #!/usr/bin/python3
 from collections import Counter
 from pathlib import Path
+import sys
+
+if len(sys.argv) > 1:
+    letters = sys.argv[1]
+else:
+    letters = input("Input your letters and we will make words:\n").lower()
+
 
 dictionary = Path('/usr/share/dict/american-english').read_text().lower().splitlines()
-letters = input("Input your letters and we will make words:\n").lower()
 
 def anagramSet(dictionary, letters):
     anagrams = set()
