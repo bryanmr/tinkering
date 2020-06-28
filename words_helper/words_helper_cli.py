@@ -3,15 +3,12 @@ from collections import Counter
 from pathlib import Path
 
 dictionary = Path('/usr/share/dict/american-english').read_text().lower().splitlines()
+letters = input("Input your letters and we will make words:\n").lower()
 
-letters = input("Input your letters and we will make words:\n")
-letters = letters.lower()
-
-def anagramSet(letters, dictionary):
-    listOfLetters = list(letters)
+def anagramSet(dictionary, letters):
     anagrams = set()
     for word in dictionary:
-        if set(listOfLetters).issuperset(word):
+        if set(letters).issuperset(word):
             anagrams.add(word)
     return anagrams
 
@@ -30,6 +27,6 @@ def orderPrint(output, letters):
             if len(word) == i:
                 print(word)
 
-possibilities = anagramSet(letters, dictionary)
+possibilities = anagramSet(dictionary, letters)
 checked = checkPossible(possibilities, letters)
 orderPrint(checked, letters)
