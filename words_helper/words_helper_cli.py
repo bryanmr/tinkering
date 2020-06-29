@@ -8,8 +8,7 @@ if len(sys.argv) > 1:
 else:
     letters = input("Input your letters and we will make words:\n").lower()
 
-
-dictionary = Path('/usr/share/dict/american-english').read_text().lower().splitlines()
+dictionary = Path('/usr/share/dict/words').read_text().lower().splitlines()
 
 def anagramSet(dictionary, letters):
     anagrams = set()
