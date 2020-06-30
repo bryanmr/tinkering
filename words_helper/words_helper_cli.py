@@ -12,16 +12,20 @@ dictionary = Path('/usr/share/dict/words').read_text().lower().splitlines()
 
 def anagramSet(dictionary, letters):
     anagrams = set()
+    lettersSet = set(letters)
     for word in dictionary:
-        if set(letters).issuperset(word):
+        if lettersSet.issuperset(word):
             anagrams.add(word)
     return anagrams
 
 def checkPossible(candidates, letters):
     listCandidates = list()
+    lettersLength = len(letters)
+    lettersCounter = Counter(letters)
     for candidate in candidates:
-        if (len(candidate) > 2 and len(candidate) <= len(letters) and
-        not Counter(candidate) - Counter(letters)):
+        candidateLength = len(candidate)
+        if (candidateLength > 2 and candidateLength <= lettersLength and
+        not Counter(candidate) - lettersCounter):
              listCandidates.append(candidate)
     return listCandidates
 
